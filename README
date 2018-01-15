@@ -1,0 +1,22 @@
+This server is based in Spring Boot.
+
+Any Access to services is done by using users 'handle' paramater in people table in the H2 DB as user name, and password is '1234' for all users.
+
+The project provides an H2 in-memory SQL database as a storage backend.
+
+API's:
+http://localhost:8080/service/messages - An endpoint that reads the message list for the current user (as identified by their HTTP Basic
+
+authentication credentials). Includes messages they have sent and messages sent by users they
+
+follow. Supports a “search=” parameter that can be used to further filter messages based on
+
+keyword.
+
+http://localhost:8080/service/follow - Endpoints to get the list of people the user is following as well as the followers of the user.
+
+http://localhost:8080/service/start-follow - An endpoint to start following another user. paramater user with user to follow.
+
+http://localhost:8080/service/end-follow - An endpoint to stop following another user. paramater user with user to unfollow.
+
+http://localhost:8080/service/popular - An endpoint that returns a list of all users, paired with their most "popular" follower. The more followers someone has, the more "popular" they are.
